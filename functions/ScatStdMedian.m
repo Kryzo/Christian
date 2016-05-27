@@ -1,9 +1,11 @@
-function ScatStdMedian(coeffType,Ts)
+function ccf = ScatStdMedian(coeffType,Ts)
 %---------------------------------------------------------------
 %ScatStdMedian remove the variance bigger than 83% of the maximum of the
 %cumulated sum of the variance.
 %-------------------------------------------------------------------------
-
+if(nargin<2)
+ Ts=0.025;
+end    
 name4=strcat(coeffType,num2str(Ts*1000));
 load name4
 NumObs=size(cc2,1);
