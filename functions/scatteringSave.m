@@ -1,4 +1,4 @@
-function  scatteringSave(FileDirectory,Ts)
+function ccm= scatteringSave(FileDirectory,Ts)
 %------------------------------------------------------------------------------------------------
 % Scatteringsave is a function called by SaveAllDataCoeff it calculate
 % for each directory containing wave files the scattering coefficients

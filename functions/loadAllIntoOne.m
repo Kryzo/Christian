@@ -1,4 +1,4 @@
-function cc2= loadAllIntoOne(coeffType,Ts)
+function [cc2,labelinst,labeltype]= loadAllIntoOne(coeffType,Ts)
 %--------------------------------------------------------
 %loadAllIntoOne joins all the files into one matrix of m*n
 %where m is the number of observation(number of files) and n is the
@@ -36,7 +36,7 @@ for i=3:size(dirinstrumenttype,1)
         for m=3:size(dirTypeOfPlay,1)
           numbtype=numbtype+1;
             name3=strtrim(dirTypeOfPlay(m,:));
-            
+            ccm
             SavedMFCC=load(fullfile(name0,name1,name2,name3,name4));%open each saved mfcc file
             sde=SavedMFCC.ccm;
             sizesde=size(sde);
