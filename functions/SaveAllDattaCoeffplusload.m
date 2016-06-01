@@ -21,6 +21,8 @@ end
 ccall=[];
 numbtype=-1;
 numbinst=0;
+labelinst=[];
+labeltype=[];
 instrumentstypelist = dir(fullfile(name0)); %load the nof the type of instruments
 dirinstrumenttype = {instrumentstypelist.name}';
 dirinstrumenttype = char(dirinstrumenttype);
