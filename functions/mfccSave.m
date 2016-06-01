@@ -9,7 +9,7 @@ function ccm= mfccSave(FileDirectory)
 
 
 WavFiles = dir(FileDirectory);%load all the wav files in the directory
-dirWavFiles=extractfield(WavFiles, 'name')';
+dirWavFiles={WavFiles.name}';
 dirWavFiles = char(dirWavFiles);
 nameOfWavFile=strtrim(dirWavFiles(3,:));
 

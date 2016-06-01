@@ -19,7 +19,7 @@ end
 %files. !!!
 %-------------------------------------------------------------------
 instrumentstypelist = dir(fullfile(name0)); %load the nof the type of instruments
-dirinstrumenttype = extractfield(instrumentstypelist, 'name')';
+dirinstrumenttype = {instrumentstypelist.name}';
 dirinstrumenttype = char(dirinstrumenttype);
 size1=size(dirinstrumenttype,1);
 c=0;
@@ -27,7 +27,7 @@ for i=3:size1
     
     name1=strtrim(dirinstrumenttype(i,:));
     instrumentslist = dir(fullfile(name0,name1));%load the names of the  instruments
-    dirinstruments= extractfield(instrumentslist, 'name')';
+    dirinstruments= {instrumentslist.name}';
     dirinstruments = char(dirinstruments);
     size2=size(dirinstruments,1);
     
@@ -35,7 +35,7 @@ for i=3:size1
         
         name2=strtrim(dirinstruments(k,:));
         TypeOfPlay = dir(fullfile(name0,name1,name2));%load the names of type of play for each instrument
-        dirTypeOfPlay= extractfield(TypeOfPlay, 'name')';
+        dirTypeOfPlay= {TypeOfPlay.name}';
         dirTypeOfPlay = char(dirTypeOfPlay);
         size3=size(dirTypeOfPlay,1);
         
@@ -47,7 +47,7 @@ for i=3:size1
                 wavFileDirectory=fullfile(name0,name1,name2,name3)
                 
                 WavFiles = dir(wavFileDirectory);%load all the wav files in the directory
-                dirWavFiles=extractfield(WavFiles, 'name')';
+                dirWavFiles={WavFiles.name}';
                 dirWavFiles = char(dirWavFiles);
                 nameOfWavFile=strtrim(dirWavFiles(3,:));
                [pathstr,name,ext] = fileparts(nameOfWavFile);
